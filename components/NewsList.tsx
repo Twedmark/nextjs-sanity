@@ -21,6 +21,7 @@ export default function NewsList({ data }: Props) {
                 className="object-cover object-left lg:object-center"
                 src={urlForImage(post.mainImage).url()}
                 alt={post.title}
+                priority={true}
                 fill
               />
               <div

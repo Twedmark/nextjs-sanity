@@ -3,12 +3,28 @@ import { urlForImage } from "@/lib/image";
 import { getPost } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+import { Post } from "@/typings";
 
 type Props = {
   params: {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  const query = groq`*[_type == "post"]
+    {
+    slug
+    }`;
+  const slugs: Post[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+}
 
 async function post({ params: { slug } }: Props) {
   const data = await getPost(slug);

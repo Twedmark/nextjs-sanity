@@ -86,7 +86,6 @@ export async function getAuthors(): Promise<Author[]> {
   `;
 
   const data = await client.fetch(query);
-  console.log(data);
 
   return data;
 }
