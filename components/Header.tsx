@@ -14,7 +14,7 @@ const Header = ({ data }: Props) => {
   // 2. Add the ability to change logo on Sanity
 
   return (
-    <>
+    <header>
       <div className="flex items-center justify-between p-4">
         <ClientSideRoute route={"/"}>
           <Image
@@ -34,8 +34,8 @@ const Header = ({ data }: Props) => {
           <Link href="/about">About</Link>
         </nav>
       </div>
-      <hr className="border-[ bg-blue-300] mb-10"></hr>
-    </>
+      <hr className="border-[bg-blue-300] mb-10"></hr>
+    </header>
   );
 };
 

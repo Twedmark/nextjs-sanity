@@ -8,7 +8,7 @@ export default async function Home() {
   const data = await getHome();
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col mb-auto">
       <div className="h-[40vh] w-full relative ">
         <div className="absolute w-full h-full top-0">
           <Image

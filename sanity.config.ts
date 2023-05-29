@@ -26,10 +26,6 @@ export default defineConfig({
               .title("Home")
               .id("home")
               .child(S.document().schemaType("home").documentId("home")),
-            // S.listItem()
-            //   .title("About")
-            //   .id("About")
-            //   .child(S.document().schemaType("header").documentId("header")),
             S.divider(),
 
             S.documentTypeListItem("post").title("Blog Posts"),

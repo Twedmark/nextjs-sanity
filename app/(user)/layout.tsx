@@ -18,9 +18,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className=" max-w-7xl mx-auto">
+      <body className="flex flex-col max-w-7xl mx-auto h-screen justify-between">
         <Header data={headerData} />
-        {children}
+        <div className="flex-grow">{children}</div>
         <Footer data={footerData} />
       </body>
     </html>
