@@ -24,8 +24,7 @@ export async function getFooter(): Promise<Footer> {
   }
   `;
 
-  const response = await client.fetch(query);
-  const data = await response;
+  const data = await client.fetch(query);
 
   return data;
 }
@@ -37,8 +36,7 @@ export async function getHeader(): Promise<Header> {
   logo,
   }
   `;
-  const response = await client.fetch(query);
-  const data = await response;
+  const data = await client.fetch(query);
 
   return data;
 }
@@ -48,12 +46,16 @@ export async function getPosts(): Promise<Post[]> {
   _id,
   _createdAt,
   title,
-  slug
+  slug,
   author->,
   mainImage,
   body,
-} | order(_createdAt desc)`;
+  categories[]->,
+} | order(_createdAt desc)
+`;
+
   const data = await client.fetch(query);
+
   return data;
 }
 
