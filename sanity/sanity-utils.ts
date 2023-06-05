@@ -35,7 +35,6 @@ export async function getHeader(): Promise<Header> {
   _id,
   companyName,
   logo,
-
   }
   `;
   const response = await client.fetch(query);
@@ -49,16 +48,12 @@ export async function getPosts(): Promise<Post[]> {
   _id,
   _createdAt,
   title,
-  slug,
+  slug
   author->,
   mainImage,
   body,
-  categories[]->,
-} | order(_createdAt desc)
-`;
-
+} | order(_createdAt desc)`;
   const data = await client.fetch(query);
-
   return data;
 }
 

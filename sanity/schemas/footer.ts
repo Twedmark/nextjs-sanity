@@ -13,11 +13,7 @@ export default defineType({
       title: "Email",
       validation: (Rule) => Rule.email(),
     },
-    {
-      name: "phoneNumber",
-      type: "number",
-      title: "Phone Number",
-    },
+    { name: "phoneNumber", type: "number", title: "Phone Number" },
     defineField({
       name: "links",
       title: "Links",
@@ -29,7 +25,6 @@ export default defineType({
     select: {
       title: "companyName",
       subtitle: "city",
-      description: "address",
     },
   },
 });

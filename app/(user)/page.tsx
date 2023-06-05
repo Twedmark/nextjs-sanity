@@ -4,6 +4,8 @@ import { getHome } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
+export const revalidate = 60;
+
 export default async function Home() {
   const data = await getHome();
 
